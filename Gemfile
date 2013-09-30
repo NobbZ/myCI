@@ -22,7 +22,8 @@ end
 
 group :development, :test do
   gem 'rspec-rails'
-  gem 'cucumber'
+  gem 'cucumber' # TODO: cucumber-rails
+  gem 'fabrication'
 end
 
 gem 'jquery-rails'
