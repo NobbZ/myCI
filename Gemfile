@@ -22,14 +22,16 @@ end
 
 group :development, :test do
   gem 'rspec-rails'
-  gem 'cucumber' # TODO: cucumber-rails
+  gem 'cucumber'
+  gem 'cucumber-rails', require: false
   gem 'fabrication'
+  gem 'fuubar'
 end
 
 gem 'jquery-rails'
 
 # To use ActiveModel has_secure_password
-# gem 'bcrypt-ruby', '~> 3.0.0'
+gem 'bcrypt-ruby', '~> 3.0.0'
 
 # To use Jbuilder templates for JSON
 # gem 'jbuilder'

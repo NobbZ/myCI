@@ -1,6 +1,3 @@
-require 'fabrication'
-require 'active_support/core_ext/string/inflections'
-
 World(FabricationMethods)
 
 Fabrication::Config.register_with_steps = true
