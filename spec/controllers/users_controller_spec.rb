@@ -26,32 +26,22 @@ describe UsersController do
     end
 
     context 'invalid user' do
-      context 'with empty username' do
-        let(:user) { Fabricate.attributes_for :user, name: '' }
-        before(:each) { post :create, user: user }
+      before(:each) { post :create, user: user }
 
-        it { should render_template :new }
+      [:name, :email, :password, :password_confirmation].each do |attribute|
+        context "witch empty #{attribute.to_s}" do
+          let(:user) { Fabricate.attributes_for :user, attribute => '' }
 
-        it { flash.to_hash.should have_key :alert }
+          it { should render_template :new }
 
-        it { flash.to_hash.should_not have_key :notice }
+          it { flash.to_hash.should have_key :alert }
 
-        it { flash[:alert].should eq 'Account wasn\'t created' }
+          it { flash.to_hash.should_not have_key :notice }
 
-        it { User.find_by_name(user[:name]).should be_nil }
-      end
+          it { flash[:alert].should eq 'Account wasn\'t created' }
 
-      context 'with empty password confirmation' do
-        let(:user) { Fabricate.attributes_for :user, password_confirmation: '' }
-        before(:each) { post :create, user: user }
-
-        it { should render_template :new }
-
-        it { flash.to_hash.should have_key :alert }
-
-        it { flash[:alert].should eq 'Account wasn\'t created' }
-
-        it { User.find_by_name(user[:name]).should be_nil }
+          it { User.find_by_name(user[:name]).should be_nil }
+        end
       end
     end
   end
