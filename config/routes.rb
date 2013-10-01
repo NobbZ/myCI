@@ -1,4 +1,7 @@
 MyCI::Application.routes.draw do
+
+  match '/login', as: 'login', controller: :session, action: :new
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
