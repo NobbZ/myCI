@@ -26,3 +26,12 @@ Feature: Users can do lot of stuff
       | email                 | test_user@example.com |
     When he signs up
     Then he should be able to sign in
+
+  Scenario: User can not sign up if password_confirmation is empty
+    Given the following User-template
+      | name                  | test_user             |
+      | password              | secret                |
+      | password_confirmation |                       |
+      | email                 | test_user@example.com |
+    When he signs up
+    Then he should see "Account wasn't created"
