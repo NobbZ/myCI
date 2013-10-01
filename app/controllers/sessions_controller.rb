@@ -7,6 +7,9 @@ class SessionsController < ApplicationController
     if user && user.authenticate(params[:password])
       session[:current_user] = user.id
       flash.notice = "Welcome #{user.name}"
+    else
+      flash.alert = "Couldn't log in"
+      render :new
     end
   end
 end
