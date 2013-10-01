@@ -16,4 +16,13 @@ Feature: Users can do lot of stuff
       | email                 | test_user@example.com |
     When he signs up
     Then he should see "Account 'test_user' created"
-    And he should see "Please sign_in to use your account"
+    And he should see "Please sign in to use your account"
+
+  Scenario: User can sign up and login instantly
+    Given the following User-template
+      | name                  | test_user             |
+      | password              | secret                |
+      | password_confirmation | secret                |
+      | email                 | test_user@example.com |
+    When he signs up
+    Then he should be able to sign in

@@ -8,4 +8,19 @@ describe UsersController do
 
     it { assigns[:user].should be_a_new User }
   end
+
+  describe '#create' do
+    context 'valid user' do
+      let(:user) { Fabricate.attributes_for :user }
+      before(:each) { post :create, user: user }
+
+      it { should redirect_to root_path }
+
+      it { flash.to_hash.should have_key :notice }
+
+      it { flash[:notice].should match_regex /Account '#{user[:name]}' created/ }
+
+      it { flash[:notice].should match_regex /Please .*sign in.* to use your account/}
+    end
+  end
 end

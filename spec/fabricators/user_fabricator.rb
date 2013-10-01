@@ -1,6 +1,6 @@
 Fabricator(:user) do
-  name 'MyString'
-  password 'MyString'
-  password_confirmation 'MyString'
-  email 'MyString'
+  name { Fabricate.sequence(:user_name) { |i| "generated_user_#{i}" } }
+  email { |attrs| "#{attrs[:name].parameterize}@example.com" }
+  password 'secret'
+  password_confirmation 'secret'
 end
