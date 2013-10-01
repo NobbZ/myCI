@@ -20,8 +20,6 @@ describe User do
         let(:first) { Fabricate :user, attribute => value }
         let(:other) { Fabricate.build :user, attribute => value }
 
-#        it { other.should_not be_valid }
-
         it { should_not save }
 
         it { should have_at_least(1).error_on attribute }

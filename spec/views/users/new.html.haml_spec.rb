@@ -7,11 +7,11 @@ describe 'users/new' do
 
     render
 
-    expect(rendered).to have_selector 'form#new_user'
-    expect(rendered).to have_selector 'input#user_name[type=text]'
-    expect(rendered).to have_selector 'input#user_email[type=email]'
-    expect(rendered).to have_selector 'input#user_password[type=password]'
-    expect(rendered).to have_selector 'input#user_password_confirmation[type=password]'
-    expect(rendered).to have_selector 'input#signup[type=submit]'
+    rendered.should have_selector 'form#new_user'
+    rendered.should have_selector 'input#user_name[type=text]'
+    rendered.should have_selector 'input#user_email[type=email]'
+    rendered.should have_selector 'input#user_password[type=password]'
+    rendered.should have_selector 'input#user_password_confirmation[type=password]'
+    rendered.should have_selector 'input#signup[type=submit]'
   end
 end
