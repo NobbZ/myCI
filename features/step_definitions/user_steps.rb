@@ -7,3 +7,7 @@ When(/^he logs in with password "(.*?)"$/) do |password|
   click_on :login
 end
 
+Then(/^(I|he) should see "(.*?)"$/) do |x, expected_text|
+  should have_content expected_text
+end
+
