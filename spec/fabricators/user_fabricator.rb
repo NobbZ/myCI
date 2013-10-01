@@ -1,6 +1,6 @@
 Fabricator(:user) do
-  name             "MyString"
-  password         "MyString"
-  password_confirm "MyString"
-  email            "MyString"
+  name 'MyString'
+  password 'MyString'
+  password_confirmation 'MyString'
+  email 'MyString'
 end
