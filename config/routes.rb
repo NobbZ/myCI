@@ -3,7 +3,7 @@ MyCI::Application.routes.draw do
   get '/login', as: 'login', controller: :sessions, action: :new
   post '/login', as: 'login', controller: :sessions, action: :create
 
-  resources :users, path_names: { new: 'signup' }
+  resources :users, path_names: {new: 'signup'}, only: [:new, :create]
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
