@@ -14,3 +14,8 @@ Feature: Users can sign into existing accounts
       | password | secret    |
     When he logs in with password "secret"
     Then he should see "Couldn't log in"
+
+  Scenario: An existing user can sign out
+    Given I am logged in
+    When I click "logout"
+    Then I should see "Logged out successfully"

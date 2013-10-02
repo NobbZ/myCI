@@ -2,6 +2,7 @@ MyCI::Application.routes.draw do
 
   get '/login', as: 'login', controller: :sessions, action: :new
   post '/login', as: 'login', controller: :sessions, action: :create
+  delete '/logout', as: 'logout', controller: :sessions, action: :destroy
 
   resources :users, path_names: {new: 'signup'}, only: [:new, :create]
 

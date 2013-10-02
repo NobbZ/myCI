@@ -7,6 +7,11 @@ def login(username, password)
   click_on :login
 end
 
+Given(/^I am logged in$/) do
+  @user = Fabricate :user
+  login(@user.name, @user.password)
+end
+
 Given(/^the following User\-template$/) do |table|
   user_data = table.rows_hash
   @user = Fabricate.build :user, user_data

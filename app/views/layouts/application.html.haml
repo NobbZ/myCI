@@ -7,6 +7,7 @@
     = csrf_meta_tags
 
   %body
+    = link_to 'logout', logout_path, id: :logout, method: :delete
 
     - if flash[:notice]
       #flash#notice
