@@ -1,0 +1,17 @@
+= form_for @user do |f|
+  %table
+    %tr
+      %td= label_tag :name
+      %td= f.text_field :name
+    %tr
+      %td= label_tag :email
+      %td= f.email_field :email
+    %tr
+      %td= label_tag :password
+      %td= f.password_field :password
+    %tr
+      %td= label_tag :password_confirmation
+      %td= f.password_field :password_confirmation
+    %tr
+      %td{colspan: 2}
+        = submit_tag 'Sign Up', id: :signup

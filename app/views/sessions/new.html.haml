@@ -1,0 +1,11 @@
+= form_tag login_path, method: :post, id: 'login' do
+  %table
+    %thead
+      %tr
+        %th= label_tag :name, 'Username'
+        %th= label_tag :password, 'Password'
+    %tbody
+      %tr
+        %td= text_field_tag :name
+        %td= password_field_tag :password
+        %td= submit_tag 'Sign In', id: :login

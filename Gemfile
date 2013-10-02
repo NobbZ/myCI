@@ -26,6 +26,7 @@ group :development, :test do
   gem 'cucumber-rails', require: false
   gem 'fabrication'
   gem 'fuubar'
+  gem 'database_cleaner'
 end
 
 gem 'jquery-rails'
@@ -44,3 +45,5 @@ gem 'bcrypt-ruby', '~> 3.0.0'
 
 # To use debugger
 # gem 'debugger'
+
+gem 'haml-rails'

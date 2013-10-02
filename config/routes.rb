@@ -1,4 +1,11 @@
 MyCI::Application.routes.draw do
+
+  get '/login', as: 'login', controller: :sessions, action: :new
+  post '/login', as: 'login', controller: :sessions, action: :create
+  delete '/logout', as: 'logout', controller: :sessions, action: :destroy
+
+  resources :users, path_names: {new: 'signup'}, only: [:new, :create]
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
@@ -48,7 +55,8 @@ MyCI::Application.routes.draw do
 
   # You can have the root of your site routed with "root"
   # just remember to delete public/index.html.
-  # root :to => 'welcome#index'
+  # TODO: Add a real
+  root to: 'users#new'
 
   # See how all your routes lay out with "rake routes"
 
