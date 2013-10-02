@@ -9,5 +9,20 @@
  * compiled file, but it's generally better to create a new file per style scope.
  *
  *= require_self
- *= require_tree .
  */
+
+@import 'foundation_and_overrides';
+
+#main {
+  @include grid-row;
+  @include panel;
+
+  #navpan {
+    @include grid-column(3);
+  }
+
+  #content {
+    @include grid-column(9);
+  }
+}
+
