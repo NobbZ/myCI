@@ -2,12 +2,20 @@
 %html
   %head
     %title MyCI
-    = stylesheet_link_tag    "application", :media => "all"
-    = javascript_include_tag "application"
+    = stylesheet_link_tag    'application', :media => 'all'
+    = javascript_include_tag 'application'
     = csrf_meta_tags
 
   %body
-    = link_to 'logout', logout_path, id: :logout, method: :delete
+    #user_box
+      - if current_user
+        %ul
+          %li= current_user.name
+          %li= link_to 'logout', logout_path, id: :logout, method: :delete
+      - else
+        %ul
+          %li= link_to 'Sign Up', new_user_path, id: :signup
+          %li= link_to 'Sign In', login_path, id: :signin
 
     - if flash[:notice]
       #flash#notice

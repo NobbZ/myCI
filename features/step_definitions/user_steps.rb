@@ -1,7 +1,8 @@
 require 'fabrication'
 
 def login(username, password)
-  visit login_path
+  visit root_path
+  click_link :signin
   fill_in :name, with: username
   fill_in :password, with: password
   click_on :login
@@ -27,7 +28,7 @@ When(/^he signs up$/) do
   fill_in :user_password, with: @user.password
   fill_in :user_password_confirmation, with: @user.password_confirmation
   fill_in :user_email, with: @user.email
-  click_on :signup
+  click_button :signup
 end
 
 Then(/^(I|he) should see "(.*?)"$/) do |x, expected_text|
