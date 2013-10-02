@@ -16,6 +16,8 @@ describe SessionsController do
       it { session[:current_user].should eq user.id }
 
       it { flash.to_hash.should have_key :notice }
+
+      it { should redirect_to root_path }
     end
 
     context 'with not existing user' do
