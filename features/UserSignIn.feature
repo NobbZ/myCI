@@ -10,7 +10,7 @@ Feature: Users can sign into existing accounts
 
   Scenario: Not exisitng user can not sign in
     Given the following User-template
-      | name     | test_user10 |
-      | password | secret      |
+      | name     | test_user |
+      | password | secret    |
     When he logs in with password "secret"
     Then he should see "Couldn't log in"

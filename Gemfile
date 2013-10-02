@@ -26,7 +26,7 @@ group :development, :test do
   gem 'cucumber-rails', require: false
   gem 'fabrication'
   gem 'fuubar'
-  # TODO: gem 'database_cleaner'
+  gem 'database_cleaner'
 end
 
 gem 'jquery-rails'
