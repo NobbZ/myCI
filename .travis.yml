@@ -10,6 +10,7 @@ install:
 - bundle install --deployment --jobs=2 
 before_script:
 - cp config/database.yml.example config/database.yml
+- cp config/initializers/secret_token.rb.example config/initializers/secret_token.rb
 - export RAILS_ENV=test
 - bundle exec rake db:create
 - bundle exec rake db:migrate
